@@ -1,0 +1,301 @@
+@import "mixin";
+@import "variables";
+
+// classlist radio button
+.removeOpacity {
+  opacity: 1;
+}
+.opacity {
+  opacity: 0.3;
+}
+
+// classes add or remove for backgroundcolor article.
+.red {
+  background-image: radial-gradient(
+    rgb(255, 230, 234),
+    rgb(255, 77, 106),
+    rgb(204, 0, 68),
+    rgb(51, 0, 9)
+  );
+}
+.orange {
+  background-image: radial-gradient(
+    rgb(255, 179, 179),
+    rgb(255, 119, 51),
+    rgb(204, 34, 0),
+    rgb(128, 21, 0)
+  );
+}
+.yellow {
+  background-image: radial-gradient(
+    rgb(255, 238, 153),
+    rgb(255, 255, 25),
+    rgb(204, 170, 0),
+    rgb(128, 106, 0)
+  );
+}
+.pink {
+  background-image: radial-gradient(
+    rgb(255, 230, 251),
+    rgb(255, 153, 238),
+    rgb(255, 51, 153),
+    rgb(230, 0, 153)
+  );
+}
+.green {
+  background-image: radial-gradient(
+    rgb(234, 255, 230),
+    rgb(128, 255, 128),
+    rgb(0, 153, 0),
+    rgb(0, 51, 0)
+  );
+}
+.blue {
+  background-image: radial-gradient(
+    rgb(204, 204, 255),
+    rgb(128, 128, 255),
+    rgb(25, 64, 255),
+    rgb(0, 25, 153)
+  );
+}
+.turqois {
+  background-image: radial-gradient(
+    rgb(230, 255, 255),
+    rgb(102, 255, 255),
+    rgb(0, 204, 204),
+    rgb(0, 128, 128)
+  );
+}
+.violet {
+  background-image: radial-gradient(
+    rgb(238, 204, 255),
+    rgb(204, 102, 255),
+    rgb(191, 0, 230),
+    rgb(106, 0, 128)
+  );
+}
+.brown {
+  background-image: radial-gradient(
+    rgb(239, 222, 205),
+    rgb(255, 191, 0),
+    rgb(153, 94, 49),
+    rgb(85, 55, 33)
+  );
+}
+.removeClass {
+  background-image: radial-gradient(white, lightgrey, darkgrey, black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 96%;
+  margin: 10px auto;
+  padding: 0 auto;
+  background-image: radial-gradient(black, darkgrey, lightgrey, white);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#btn-toggle {
+  width: 50px;
+  height: 50px;
+  background-color: antiquewhite;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+img {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  z-index: 0;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-content: center;
+  header {
+    height: 60px;
+    grid-column: 2 / -1;
+    grid-row: 1;
+    h1 {
+      font-size: 52px;
+      font-family: $fontfam;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+  nav {
+    width: 60px;
+    height: 60px;
+    grid-column: 1;
+    grid-row: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  aside {
+    width: 0;
+    height: calc(100vp - 60px);
+    grid-column: 1;
+    grid-row: 2;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    transition: width 0.3s ease, visibility 0.3s ease-out;
+    z-index: 0;
+    ul {
+      list-style: none;
+      visibility: hidden;
+      transition: width 0.3s ease, visibility 0.3s ease-out;
+      li {
+        padding: 10px;
+        border: 1px solid black;
+        visibility: hidden;
+        transition: width 0.3s ease, visibility 0.3s ease-out;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  input [type="radio"] {
+    z-index: 1;
+    padding: 10px;
+  }
+
+  article {
+    margin: 20px auto;
+    width: 100%;
+    height: auto;
+    align-self: flex-start;
+    grid-column: 2 / -1;
+    grid-row: 2;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 1px dotted grey;
+    border-radius: 25px;
+    text-align: center;
+    z-index: 0;
+    transition: width 0.3s ease-out;
+  }
+  h1 {
+    margin-top: 20px;
+    @include titles;
+    font-size: 38px;
+  }
+  h2 {
+    @include titles;
+    font-size: 30px;
+  }
+  p {
+    padding: 10px 20%;
+    font-family: $fontfam;
+    font-size: 20px;
+    line-height: 1.5rem;
+    margin-bottom: 50px;
+  }
+}
+
+// kleuren sidebar
+
+#home {
+  @include bg-colors(white, black);
+}
+
+#rood {
+  @include bg-colors(rgb(255, 0, 0), rgb(114, 5, 5));
+}
+#oranje {
+  @include bg-colors(rgb(255, 165, 0), rgb(85, 51, 10));
+}
+#geel {
+  @include bg-colors(rgb(255, 208, 0), rgb(68, 50, 2));
+}
+#roze {
+  @include bg-colors(rgb(255, 77, 196), rgb(81, 1, 41));
+}
+#groen {
+  @include bg-colors(rgb(2, 185, 2), rgb(1, 80, 1));
+}
+#blauw {
+  @include bg-colors(rgb(48, 48, 249), rgb(3, 3, 83));
+}
+#turqoise {
+  @include bg-colors(rgb(64, 224, 208), rgb(2, 70, 70));
+}
+#violet {
+  @include bg-colors(rgb(220, 89, 220), rgb(121, 3, 171));
+}
+#bruin {
+  @include bg-colors(rgb(165, 42, 42), rgb(94, 41, 2));
+}
+
+@media screen and (min-width: 350px) and (max-width: 1000px) {
+  .screenOnly {
+    display: none;
+  }
+  input[type="radio"] {
+    opacity: 0.3;
+  }
+
+  #home {
+    font-size: 12px;
+  }
+
+  #rood {
+    font-size: 0px;
+  }
+
+  #oranje {
+    font-size: 0px;
+  }
+
+  #geel {
+    font-size: 0px;
+  }
+
+  #roze {
+    font-size: 0px;
+  }
+
+  #groen {
+    font-size: 0px;
+  }
+
+  #blauw {
+    font-size: 0px;
+  }
+
+  #turqoise {
+    font-size: 0px;
+  }
+
+  #violet {
+    font-size: 0px;
+  }
+
+  #bruin {
+    font-size: 0px;
+  }
+
+  article h1 {
+    font-size: 28px;
+  }
+  article h2 {
+    font-size: 24px;
+  }
+  article p {
+    font-size: 16px;
+  }
+}
