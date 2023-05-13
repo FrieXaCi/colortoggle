@@ -1,6 +1,10 @@
 # colortoggle
 assignement colortoggleFrieda Haringsma
-Assignment: Color Toggle
+Assignment: Color Toggle WincAcademy
+
+live-preview:
+https://color-toggle-assignement.netlify.app/
+
 With this assignment you will create your very first color toggle with JavaScript.
 
 It will be a choice menu, which will change your background color of your webpage.
